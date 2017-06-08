@@ -1,0 +1,53 @@
+:root {
+    --selected-node: rgb(238, 238, 238);
+}
+
+.treeView {
+    ul {
+
+        &:first-of-type {
+            padding-left: 0;
+        }
+
+        list-style-type: none;
+
+        li {
+            .header {
+                line-height: 20px;
+                font-size: 15px;
+                cursor: pointer;
+                padding: 5px;
+                position: relative;
+                .arrow {
+                    transition: .3s ease;
+                    width: 30px;
+                    text-align: center;
+                    float: right;
+                    line-height: 20px;
+                    &.arrowExpanded {
+                        transition: .8s ease;
+                        transform: rotate(180deg);
+                    }
+                }
+                &.selected {
+                    background-color: var(--selected-node);
+                    border-left: 2px solid rgb(43, 149, 253);
+                }
+                &:not(.selected) {
+                    padding-left: 7px;
+                }
+                &:hover {
+                    background: rgb(238, 238, 238);
+                }
+            }
+
+            .children {
+                ul {
+                    padding-left: 10px;
+                }
+                &.childrenExpanded {}
+            }
+
+        }
+    }
+}

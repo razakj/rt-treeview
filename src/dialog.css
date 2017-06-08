@@ -1,0 +1,13 @@
+.body {
+    overflow-y: scroll;
+}
+
+.input {
+    cursor: pointer;
+}
+
+.error {
+    color: #de3226;
+    font-size: 12px;
+    line-height: 20px;
+}
