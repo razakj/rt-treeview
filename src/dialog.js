@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Dialog from 'react-toolbox/lib/dialog';
 import Input from 'react-toolbox/lib/input';
@@ -6,7 +7,7 @@ import Input from 'react-toolbox/lib/input';
 import TreeView from './index'
 import dialogTheme from './dialog.css';
 
-export default class TreeViewDialog extends React.Component {
+class TreeViewDialog extends React.Component {
     constructor(props) {
         super(props);
 
@@ -42,10 +43,20 @@ export default class TreeViewDialog extends React.Component {
                     title={this.props.dialogTitle ? this.props.dialogTitle : ""}
                     theme={dialogTheme}
                 >
-                    <TreeView{...this.props.treeview} />
+                    {this.props.children}
                 </Dialog>
             </div>
 
         )
     }
 }
+
+TreeViewDialog.PropTypes = {
+    children: PropTypes.element.isRequired,
+    inputLabel: PropTypes.string,
+    inputValue: PropTypes.string,
+    error: PropTypes.string,
+    dialogTitle: PropTypes.string
+};
+
+export default TreeViewDialog;

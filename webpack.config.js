@@ -5,7 +5,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const _isProduction = process.env.NODE_ENV === "production";
 
 let plugins = [
-    new ExtractTextPlugin({filename: "[name].css", allChunks: true}),
+    new ExtractTextPlugin({filename: "treeview.css", allChunks: true}),
     new webpack.LoaderOptionsPlugin({
         options: {
             context: __dirname
@@ -29,6 +29,7 @@ module.exports = {
         'react': 'react',
         'react-dom': 'react-dom',
         'classnames' : 'classnames',
+        'prop-types' : 'prop-types',
         'react-toolbox/lib/dialog' : 'react-toolbox/lib/dialog',
         'react-toolbox/lib/input' : 'react-toolbox/lib/input',
         'react-toolbox/lib/font_icon' : 'react-toolbox/lib/font_icon',
@@ -72,5 +73,13 @@ module.exports = {
                 use: 'babel-loader'
             }
         ]
+    },
+    devServer: {
+        contentBase: path.join(__dirname, "lib"),
+        compress: true,
+        port: 9876,
+        historyApiFallback: {
+            index: path.join(__dirname, "examples/index.html"),
+        }
     }
 };

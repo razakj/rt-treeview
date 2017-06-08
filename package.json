@@ -8,7 +8,8 @@
     "clean": "rimraf ./lib",
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
-    "build": "cross-env NODE_ENV=production webpack"
+    "build": "cross-env NODE_ENV=production webpack",
+    "examples": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -41,12 +42,19 @@
     "postcss-loader": "^2.0.5",
     "rimraf": "^2.6.1",
     "style-loader": "^0.18.2",
-    "webpack": "^2.6.1"
-  },
-  "peerDependencies": {
-    "classnames": "^2.2.5",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.1",
     "react-toolbox": "^2.0.0-beta.8"
+  },
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.1",
+    "react-toolbox": "^2.0.0-beta.8"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.10"
   }
 }

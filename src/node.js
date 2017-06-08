@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import FontIcon from 'react-toolbox/lib/font_icon';
@@ -85,5 +86,17 @@ class Node extends React.Component {
         )
     }
 }
+
+Node.PropTypes = {
+    code: PropTypes.string.isRequired,
+    selected: PropTypes.bool,
+    expanded : PropTypes.bool,
+    hasChildren: PropTypes.bool,
+    node: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        parent: PropTypes.string,
+        children: PropTypes.arrayOf(PropTypes.string)
+    }).isRequired
+};
 
 export default Node;
