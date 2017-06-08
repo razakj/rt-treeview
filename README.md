@@ -40,7 +40,7 @@ There are two components exposed by the package.
 
 ### TreeView
 ```javascript
-import TreeView from 'rt-treeview'
+import {TreeView} from 'rt-treeview'
 ```
 TreeView component can be embedded directly into your application. The tree is defined and constructed by ```nodes```.
 
@@ -103,7 +103,7 @@ class TreeViewExample extends React.Component {
 
 ### TreeViewDialog
 ```javascript
-import TreeViewDialog from 'rt-treeview'
+import {TreeViewDialog} from 'rt-treeview'
 ```
 TreeViewDialog is embedded only as a read-only Input which triggers a dialog with the TreeView component. 
 This is useful when you don't want to embed the TreeView directly into the main view and only display 
