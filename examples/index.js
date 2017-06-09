@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {TreeViewDialog, TreeView} from '../lib';
+import {TreeViewDialog, TreeView} from '../src';
 
 class TreeViewExample extends React.Component {
     constructor(props) {

@@ -9,16 +9,16 @@ import treeviewTheme from './treeview.css';
 
 const Header = props => {
     return (
-        <div className={classNames(treeviewTheme.header, {
+        <div {...props} className={classNames(treeviewTheme.header, {
             [treeviewTheme.selected] : props.selected
         })}>
-            {props.children}
             {props.node.name}
             {props.hasChildren ? (
-                <FontIcon value="keyboard_arrow_down" className={classNames(treeviewTheme.arrow, {
+                <FontIcon  value="keyboard_arrow_down" className={classNames(treeviewTheme.arrow, {
                     [treeviewTheme.arrowExpanded] : props.expanded
                 })}/>
             ) : null}
+            {props.children}
         </div>
     )
 };
@@ -74,8 +74,9 @@ class Node extends React.Component {
                     expanded={expanded}
                     hasChildren={node.children && node.children.length > 0}
                     theme={rippleTheme}
+                    style={{overflow: 'hidden'}}
                 />
-                <div className={classNames(treeviewTheme.children, {
+                <div style={{overflow: 'hidden'}} className={classNames(treeviewTheme.children, {
                     [treeviewTheme.childrenExpanded] : expanded
                 })}>
                     {expanded ? this.props.children : null}
