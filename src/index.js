@@ -1,4 +1,2 @@
-import TreeView from './treeview';
-import TreeViewDialog from './dialog';
-
-export {TreeView, TreeViewDialog};
+export { default as TreeView } from './treeview';
+export { default as TreeViewDialog } from './dialog';

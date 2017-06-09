@@ -2,13 +2,14 @@
   "name": "rt-treeview",
   "version": "0.0.4",
   "description": "TreeView component based on react-toolbox UI framework",
-  "main": "lib/treeview.js",
+  "main": "./lib",
+  "module": "./lib",
   "scripts": {
-    "babel": "babel ./src --out-dir ./lib",
+    "build": "cross-env NODE_ENV=production npm run babel",
     "clean": "rimraf ./lib",
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
-    "build": "cross-env NODE_ENV=production webpack",
+    "babel": "babel ./src --out-dir ./lib && cpx \"./src/*.css\" ./lib",
     "examples": "webpack-dev-server"
   },
   "repository": {
@@ -22,7 +23,11 @@
     "ui",
     "nodes"
   ],
-  "author": "Jakub Razak",
+  "author": {
+    "email": "methodcz@gmail.com",
+    "name": "Jakub Razak",
+    "url": "https://github.com/razakj"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/razakj/rt-treeview/issues"
@@ -35,18 +40,20 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "cpx": "^1.5.0",
     "cross-env": "^5.0.1",
     "css-loader": "^0.28.4",
     "extract-text-webpack-plugin": "^2.1.2",
+    "file-loader": "^0.11.2",
     "postcss-cssnext": "^2.11.0",
     "postcss-loader": "^2.0.5",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.1",
+    "react-toolbox": "^2.0.0-beta.8",
     "rimraf": "^2.6.1",
     "style-loader": "^0.18.2",
     "webpack": "^2.6.1",
-    "webpack-dev-server": "^2.4.5",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.1",
-    "react-toolbox": "^2.0.0-beta.8"
+    "webpack-dev-server": "^2.4.5"
   },
   "peerDependencies": {
     "react": "^15.4.2",

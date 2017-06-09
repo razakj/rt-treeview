@@ -2,10 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import FontIcon from 'react-toolbox/lib/font_icon';
-import Ripple from 'react-toolbox/lib/ripple';
-import rippleTheme from 'react-toolbox/lib/ripple/theme.css';
+import {FontIcon, Ripple} from 'react-toolbox';
 
+import rippleTheme from 'react-toolbox/lib/ripple/theme.css';
 import treeviewTheme from './treeview.css';
 
 const Header = props => {

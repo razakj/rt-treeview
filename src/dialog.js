@@ -1,10 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Dialog from 'react-toolbox/lib/dialog';
-import Input from 'react-toolbox/lib/input';
+import {Dialog, Input} from 'react-toolbox';
 
-import TreeView from './index'
 import dialogTheme from './dialog.css';
 
 class TreeViewDialog extends React.Component {

@@ -36,7 +36,11 @@ npm install rt-treeview
 ```
 
 ## Usage
-There are two components exposed by the package.
+There are two components exposed by the package - TreeView and TreeViewDialog.
+
+Similar to react-toolbox the components are written using React, PostCSS(http://postcss.org/) and CSSNext(http://cssnext.io/).
+That means in order to the components you should use package bundler of your choice and apply both
+PostCSS and CSSNext loaders.
 
 ### TreeView
 ```javascript

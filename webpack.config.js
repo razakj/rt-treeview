@@ -1,8 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
-
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const _isProduction = process.env.NODE_ENV === "production";
 
 let plugins = [
     new ExtractTextPlugin({filename: "treeview.css", allChunks: true}),
@@ -13,32 +11,14 @@ let plugins = [
     })
 ];
 
-if(_isProduction) {
-    plugins.push(new webpack.DefinePlugin({
-        "process.env": {
-            "NODE_ENV": JSON.stringify('production')
-        }
-    }))
-}
-
 module.exports = {
     entry: {
-        treeview: ['./src/index.js']
-    },
-    externals: {
-        'react': 'react',
-        'react-dom': 'react-dom',
-        'classnames' : 'classnames',
-        'prop-types' : 'prop-types',
-        'react-toolbox/lib/dialog' : 'react-toolbox/lib/dialog',
-        'react-toolbox/lib/input' : 'react-toolbox/lib/input',
-        'react-toolbox/lib/font_icon' : 'react-toolbox/lib/font_icon',
-        'react-toolbox/lib/ripple' : 'react-toolbox/lib/ripple',
-        'react-toolbox/lib/ripple/theme.css' : 'react-toolbox/lib/ripple/theme.css'
+        examples: [
+            './examples/examples.js', 'react', 'react-dom', 'react-toolbox'
+        ],
     },
     output: {
-        path: path.join(__dirname, 'lib'),
-        filename: "[name].js"
+        filename: "examples.js"
     },
     resolve: {
         modules: [
@@ -55,7 +35,8 @@ module.exports = {
                     use: [
                         {loader: 'css-loader', options: {
                             localIdentName: '[name]__[local]___[hash:base64:4]',
-                            modules: true
+                            modules: true,
+                            importLoaders: 1
                         }},
                         {loader: 'postcss-loader', options: {
                             plugins: function() {
@@ -70,16 +51,13 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: 'babel-loader'
-            }
+                loader: 'babel-loader'
+            },
         ]
     },
     devServer: {
-        contentBase: path.join(__dirname, "lib"),
+        contentBase: path.join(__dirname, "examples"),
         compress: true,
         port: 9876,
-        historyApiFallback: {
-            index: path.join(__dirname, "examples/index.html"),
-        }
     }
 };
