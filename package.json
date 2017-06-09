@@ -10,7 +10,8 @@
     "prebuild": "npm run clean",
     "prepublish": "npm run build",
     "babel": "babel ./src --out-dir ./lib && cpx \"./src/*.css\" ./lib",
-    "examples": "webpack-dev-server"
+    "examples": "webpack-dev-server",
+    "docs": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",

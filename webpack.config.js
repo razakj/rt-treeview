@@ -2,8 +2,10 @@ const path = require("path");
 const webpack = require("webpack");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const _isProduction = process.env.NODE_ENV === "production";
+
 let plugins = [
-    new ExtractTextPlugin({filename: "treeview.css", allChunks: true}),
+    new ExtractTextPlugin({filename: "app.css", allChunks: true}),
     new webpack.LoaderOptionsPlugin({
         options: {
             context: __dirname
@@ -11,14 +13,25 @@ let plugins = [
     })
 ];
 
+if(_isProduction) {
+    plugins.push(new webpack.DefinePlugin({
+        "process.env": {
+            "NODE_ENV": JSON.stringify('production')
+        }
+    }));
+    plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+
+
 module.exports = {
     entry: {
-        examples: [
+        app: [
             './examples/index.js', 'react', 'react-dom', 'react-toolbox'
         ],
     },
     output: {
-        filename: "examples.js"
+        path: path.join(__dirname, 'docs', 'assets'),
+        filename: "app.js"
     },
     resolve: {
         modules: [
