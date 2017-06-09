@@ -36,6 +36,20 @@ browsers. See status [here](https://developer.mozilla.org/en/docs/Web/JavaScript
 I'd suggest using babel-polyfill or core-js in order to support older browsers.
 * The package will only work with **react-toolbox-beta8 and higher**
 
+#### Search
+
+Searching functionality can be enabled via a `search` property. Searching is optional due to its impact
+on the performance when performing the actual search.
+
+At the moment all the siblings (collapsed) along with matched node's parent structure (expanded) are displayed. 
+This is behaviour is expected to become configurable in the future.
+
+#### Initial selection
+
+Initial selection can be defined by providing a key value of initially selected node via `selectedNode` property.
+The parent structure of the initially selected node will be expanded.
+
+
 ## Installation
 No surprise here
 ```
@@ -182,18 +196,22 @@ class TreeViewDialogExample extends React.Component {
 }
 ```
 
-## Search
+## Examples
 
-Searching functionality can be enabled via a `search` property. Searching is optional due to its impact
-on the performance when performing the actual search.
+Online demo is coming soon in the meantime you can follow simple steps below to run examples
+locally 
 
-At the moment all the siblings (collapsed) along with matched node's parent structure (expanded) are displayed. 
-This is behaviour is expected to become configurable in the future.
+```
+git clone https://github.com/razakj/rt-treeview.git
+cd rt-treeview
+npm install
+npm run examples
+```
 
-## Initial selection
+You should be able to access the examples via web browser at http://localhost:9876. Please 
+note that currently there is a bug with styles not loading properly in the provided examples.
 
-Initial selection can be defined by providing a key value of initially selected node via `selectedNode` property.
-The parent structure of the initially selected node will be expanded.
+The examples can be found under *./examples/index.js*
 
 ## LICENSE
 

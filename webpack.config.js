@@ -14,7 +14,7 @@ let plugins = [
 module.exports = {
     entry: {
         examples: [
-            './examples/examples.js', 'react', 'react-dom', 'react-toolbox'
+            './examples/index.js', 'react', 'react-dom', 'react-toolbox'
         ],
     },
     output: {
@@ -38,13 +38,7 @@ module.exports = {
                             modules: true,
                             importLoaders: 1
                         }},
-                        {loader: 'postcss-loader', options: {
-                            plugins: function() {
-                                return [
-                                    require('postcss-cssnext')()
-                                ]
-                            }
-                        }}
+                        {loader: 'postcss-loader'}
                     ]
                 })
             },
