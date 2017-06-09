@@ -5,16 +5,19 @@
 
 TreeView component based on a great [react-toolbox](https://github.com/react-toolbox/react-toolbox) 
 UI framework.
+
+## Demo
+
+[HERE](https://razakj.github.io/rt-treeview/)
+
 ## Status
 This package is currently under an active development and API might change in the future however it it already
 used in an active project.
 
 ### ToDo
 
-* Make examples working properly
 * Configurable search behaviour
 * Bug fixing
-* Revise build/bundle system
 
 ## Overview
 This package was developed as part of a couple of internal projects where react-toolbox is used as a main UI
@@ -197,9 +200,6 @@ class TreeViewDialogExample extends React.Component {
 ```
 
 ## Examples
-
-Online demo is coming soon in the meantime you can follow simple steps below to run examples
-locally 
 
 ```
 git clone https://github.com/razakj/rt-treeview.git
