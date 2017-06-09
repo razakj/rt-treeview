@@ -9,7 +9,13 @@ UI framework.
 This package is currently under an active development and API might change in the future however it it already
 used in an active project.
 
-I'd still like to add quite a few features and would consider this as an *Alpha* version.
+### ToDo
+
+* Make examples working properly
+* Configurable search behaviour
+* Bug fixing
+* Revise build/bundle system
+
 ## Overview
 This package was developed as part of a couple of internal projects where react-toolbox is used as a main UI
 framework and we weren't able to find a suitable TreeView component for our needs.
@@ -28,6 +34,7 @@ is deselected.
 * TreeView is defined by nodes which must be given as input in form of Map which may not be supported by older
 browsers. See status [here](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map).
 I'd suggest using babel-polyfill or core-js in order to support older browsers.
+* The package will only work with **react-toolbox-beta8 and higher**
 
 ## Installation
 No surprise here
@@ -39,8 +46,8 @@ npm install rt-treeview
 There are two components exposed by the package - TreeView and TreeViewDialog.
 
 Similar to react-toolbox the components are written using React, PostCSS(http://postcss.org/) and CSSNext(http://cssnext.io/).
-That means in order to the components you should use package bundler of your choice and apply both
-PostCSS and CSSNext loaders.
+That means in order to use the components you should use package bundler ([webpack](https://webpack.js.org/)) for your application
+along with PostCSS and CSSNext loaders.
 
 ### TreeView
 ```javascript
