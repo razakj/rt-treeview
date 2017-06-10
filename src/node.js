@@ -81,7 +81,6 @@ class Node extends React.Component {
                 })}>
                     {expanded ? this.props.children : null}
                 </div>
-
             </li>
         )
     }

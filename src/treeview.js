@@ -44,12 +44,6 @@ class Search extends React.Component {
     }
 }
 
-const Error = props => {
-    return props.error ? (
-        <div className={classNames(theme.errorText)}>{props.error}</div>
-    ) : <div />
-};
-
 class TreeView extends React.Component {
     constructor(props) {
         super(props);
@@ -98,7 +92,7 @@ class TreeView extends React.Component {
         const {expandedNodes, filteredNodes} = this.state;
         return !(
             nextState.expandedNodes.length === expandedNodes.length && nextState.filteredNodes.length === filteredNodes.length
-        ) || nextProps.error !== this.props.error
+        );
     }
 
     onNodeSelect(code, node) {
@@ -184,12 +178,11 @@ class TreeView extends React.Component {
     }
 
     render() {
-        const {nodes, search, error} = this.props;
+        const {nodes, search} = this.props;
         const roots = Array.from(nodes.keys()).filter(key=>!nodes.get(key).parent);
 
         return (
             <div className={classNames(theme.treeView)}>
-                <Error error={error} />
                 {search ? <Search search={this.search} /> : null}
                 {this.recursiveRender(roots)}
             </div>
