@@ -4148,20 +4148,24 @@
   display: block;
   padding: 8px;
 }
-.treeview__treeView___jSc4 ul {
+.treeview__treeView___jSc4 {
+    padding: 5px;
+}
+
+    .treeview__treeView___jSc4 ul {
 
         list-style-type: none;
     }
 
-        .treeview__treeView___jSc4 ul li .treeview__header___vm1a:hover {
+    .treeview__treeView___jSc4 ul li .treeview__header___vm1a:hover {
                     background: rgb(238, 238, 238);
 }
 
-        .treeview__treeView___jSc4 ul li .treeview__header___vm1a:not(.treeview__selected___5Rke) {
+    .treeview__treeView___jSc4 ul li .treeview__header___vm1a:not(.treeview__selected___5Rke) {
                     padding-left: 7px;
 }
 
-        .treeview__treeView___jSc4 ul li .treeview__header___vm1a {
+    .treeview__treeView___jSc4 ul li .treeview__header___vm1a {
                 line-height: 20px;
                 font-size: 15px;
                 cursor: pointer;
@@ -4169,7 +4173,7 @@
                 position: relative;
             }
 
-        .treeview__treeView___jSc4 ul li .treeview__header___vm1a .treeview__arrow___3Rsy {
+    .treeview__treeView___jSc4 ul li .treeview__header___vm1a .treeview__arrow___3Rsy {
                     transition: .3s ease;
                     width: 30px;
                     text-align: center;
@@ -4177,25 +4181,32 @@
                     line-height: 20px
                 }
 
-        .treeview__treeView___jSc4 ul li .treeview__header___vm1a .treeview__arrow___3Rsy.treeview__arrowExpanded___3rGn {
+    .treeview__treeView___jSc4 ul li .treeview__header___vm1a .treeview__arrow___3Rsy.treeview__arrowExpanded___3rGn {
                         transition: .8s ease;
                         -webkit-transform: rotate(180deg);
                                 transform: rotate(180deg);
 }
 
-        .treeview__treeView___jSc4 ul li .treeview__header___vm1a.treeview__selected___5Rke {
+    .treeview__treeView___jSc4 ul li .treeview__header___vm1a.treeview__selected___5Rke {
                     background-color: rgb(238, 238, 238);
                     border-left: 2px solid rgb(43, 149, 253);
 }
 
-        .treeview__treeView___jSc4 ul li .treeview__children___3MOe ul {
+    .treeview__treeView___jSc4 ul li .treeview__children___3MOe ul {
                     padding-left: 10px;
                 }
 
-        .treeview__treeView___jSc4 ul li .treeview__children___3MOe.treeview__childrenExpanded___xhJD {}
+    .treeview__treeView___jSc4 ul li .treeview__children___3MOe.treeview__childrenExpanded___xhJD {}
+
     .treeview__treeView___jSc4 ul:first-of-type {
             padding-left: 0;
-}.search__input___-vqM {
+}
+
+    .treeview__treeView___jSc4 .treeview__errorText___E05j {
+        color: rgb(222, 50, 38);
+        font-size: 14.4px;
+        font-size: .9rem;
+    }.search__input___-vqM {
     padding-bottom: 0;
 }.dialog__body___1KdS {
     overflow-y: scroll;

@@ -20,7 +20,7 @@ class TreeViewExample extends React.Component {
     }
 
     onNodeSelect(nodeKey, node) {
-        // Do Stuff
+        // Do stuff
     }
 
     onNodeDeselect(nodeKey, node) {

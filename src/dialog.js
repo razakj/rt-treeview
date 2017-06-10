@@ -54,7 +54,7 @@ TreeViewDialog.PropTypes = {
     inputLabel: PropTypes.string,
     inputValue: PropTypes.string,
     error: PropTypes.string,
-    dialogTitle: PropTypes.string
+    dialogTitle: PropTypes.string,
 };
 
 export default TreeViewDialog;

@@ -1,8 +1,11 @@
 :root {
     --selected-node: rgb(238, 238, 238);
+    --treeview-error-color: rgb(222, 50, 38);
 }
 
 .treeView {
+    padding: 5px;
+
     ul {
 
         &:first-of-type {
@@ -49,5 +52,10 @@
             }
 
         }
+    }
+
+    .errorText {
+        color: var(--treeview-error-color);
+        font-size: .9rem;
     }
 }

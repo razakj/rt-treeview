@@ -23,7 +23,7 @@ const Header = props => {
     )
 };
 
-const RippleHeader = Ripple({spread: 1})(Header);
+const RippleHeader = Ripple({spread: 2})(Header);
 
 class Node extends React.Component {
     constructor(props) {

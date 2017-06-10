@@ -11,13 +11,16 @@ UI framework.
 [HERE](https://razakj.github.io/rt-treeview/)
 
 ## Status
-This package is currently under an active development and API might change in the future however it it already
-used in an active project.
+This package is currently under an active development and API might change in the future. The package is used
+in an active project so adding a new features and bug fixing is mainly driven by the input
+from the project.
 
 ### ToDo
 
 * Configurable search behaviour
-* Bug fixing
+* Custom styling/theming including proper CSS nesting
+* Configurable sizing
+* Improved animation
 
 ## Overview
 This package was developed as part of a couple of internal projects where react-toolbox is used as a main UI
@@ -32,7 +35,7 @@ Main focus is on
 
 ### Features & Limitations
 
-* Only**one node**can be selected**at the time**. As soon as a new node is selected the current selection
+* Only **one node** can be selected **at the time**. As soon as a new node is selected the current selection
 is deselected.
 * TreeView is defined by nodes which must be given as input in form of Map which may not be supported by older
 browsers. See status [here](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map).
@@ -78,6 +81,7 @@ TreeView component can be embedded directly into your application. The tree is d
 | nodes         | MapOf(Node)   | yes         | Map of nodes used to construct the tree.
 | selectedNode  | string        | no          | Initially selected node on a first render
 | search        | bool          | no          | Display search input
+| error         | string        | no          | Error message displayed above the tree
 | onNodeSelect  | func          | no          | Callback called on a node selection with *(nodeKey, node)*
 | onNodeDeselect| func          | no          | Callback called when a node is de-selected with *(nodeKey, node)*
 #### Node.PropTypes
