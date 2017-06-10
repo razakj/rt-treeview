@@ -1,6 +1,6 @@
 {
   "name": "rt-treeview",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "TreeView component based on react-toolbox UI framework",
   "main": "./lib",
   "module": "./lib",
