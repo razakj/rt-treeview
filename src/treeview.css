@@ -4,8 +4,6 @@
 }
 
 .treeView {
-    padding: 5px;
-
     ul {
 
         &:first-of-type {
