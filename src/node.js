@@ -8,10 +8,17 @@ import rippleTheme from 'react-toolbox/lib/ripple/theme.css';
 import treeviewTheme from './treeview.css';
 
 const Header = props => {
+    console.log(props);
     return (
-        <div {...props} className={classNames(treeviewTheme.header, {
-            [treeviewTheme.selected] : props.selected
-        })}>
+        <div
+            onMouseDown={props.onMouseDown}
+            onTouchStart={props.onTouchStart}
+            style={props.style}
+            className={classNames(treeviewTheme.header, {
+                [treeviewTheme.selected] : props.selected,
+                [props.size ? treeviewTheme[props.size] : treeviewTheme['sm']] : true
+            })}
+        >
             {props.node.name}
             {props.hasChildren ? (
                 <FontIcon  value="keyboard_arrow_down" className={classNames(treeviewTheme.arrow, {
@@ -68,14 +75,16 @@ class Node extends React.Component {
         const {node} = this.props;
         return (
             <li onClick={this.onClick}>
-                <RippleHeader
-                    node={node}
-                    selected={selected}
-                    expanded={expanded}
-                    hasChildren={node.children && node.children.length > 0}
-                    theme={rippleTheme}
-                    style={{overflow: 'hidden'}}
-                />
+                <div className={classNames(treeviewTheme.node)}>
+                    <RippleHeader
+                        node={node}
+                        selected={selected}
+                        expanded={expanded}
+                        hasChildren={node.children && node.children.length > 0}
+                        theme={rippleTheme}
+                        style={{overflow: 'hidden'}}
+                    />
+                </div>
                 <div style={{overflow: 'hidden'}} className={classNames(treeviewTheme.children, {
                     [treeviewTheme.childrenExpanded] : expanded
                 })}>
@@ -91,6 +100,7 @@ Node.PropTypes = {
     selected: PropTypes.bool,
     expanded : PropTypes.bool,
     hasChildren: PropTypes.bool,
+    size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
     node: PropTypes.shape({
         name: PropTypes.string.isRequired,
         parent: PropTypes.string,

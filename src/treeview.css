@@ -1,58 +1,94 @@
 :root {
     --selected-node: rgb(238, 238, 238);
     --treeview-error-color: rgb(222, 50, 38);
+
+    --treeview-xs: 5px;
+    --treeview-sm: 10px;
+    --treeview-md: 15px;
+    --treeview-lg: 20px;
+
+    --treeview-border-width: 2px;
 }
 
 .treeView {
-    ul {
-
-        &:first-of-type {
-            padding-left: 0;
-        }
+    & > ul {
 
         list-style-type: none;
+        padding-left: 0;
 
-        li {
-            .header {
-                line-height: 20px;
-                font-size: 15px;
-                cursor: pointer;
-                padding: 5px;
-                position: relative;
-                .arrow {
-                    transition: .3s ease;
-                    width: 30px;
-                    text-align: center;
-                    float: right;
-                    line-height: 20px;
-                    &.arrowExpanded {
-                        transition: .8s ease;
-                        transform: rotate(180deg);
-                    }
-                }
-                &.selected {
-                    background-color: var(--selected-node);
-                    border-left: 2px solid rgb(43, 149, 253);
-                }
-                &:not(.selected) {
-                    padding-left: 7px;
-                }
+        & li {
+            & > .node {
+
                 &:hover {
                     background: rgb(238, 238, 238);
                 }
+
+                & > .header {
+                    cursor: pointer;
+                    position: relative;
+
+                    &.selected {
+                        background-color: var(--selected-node);
+                        border-left: var(--treeview-border-width) solid rgb(43, 149, 253);
+                    }
+
+                    & > .arrow {
+                        transition: .3s ease;
+                        width: 30px;
+                        text-align: center;
+                        float: right;
+                        line-height: 20px;
+
+                        &.arrowExpanded {
+                            transition: .3s ease;
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    &.xs {
+                        padding: var(--treeview-xs);
+                        font-size: 15px;
+                        &:not(.selected) {
+                            padding-left: calc(var(--treeview-xs) + var(--treeview-border-width));
+                        }
+                    }
+
+                    &.sm {
+                        padding: var(--treeview-sm);
+                        font-size: 17px;
+                        &:not(.selected) {
+                            padding-left: calc(var(--treeview-sm) + var(--treeview-border-width));
+                        }
+                    }
+
+                    &.md {
+                        padding: var(--treeview-md);
+                        font-size: 18px;
+                        &:not(.selected) {
+                            padding-left: calc(var(--treeview-md) + var(--treeview-border-width));
+                        }
+                    }
+
+                    &.lg {
+                        padding: var(--treeview-lg);
+                        font-size: 20px;
+                        &:not(.selected) {
+                            padding-left: calc(var(--treeview-lg) + var(--treeview-border-width));
+                        }
+                    }
+
+                }
             }
 
-            .children {
-                ul {
+            & .children {
+                & > ul {
                     padding-left: 10px;
                 }
-                &.childrenExpanded {}
             }
-
         }
     }
 
-    .errorText {
+    &.errorText {
         color: var(--treeview-error-color);
         font-size: .9rem;
     }

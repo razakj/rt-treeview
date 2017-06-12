@@ -196,7 +196,8 @@ TreeView.PropTypes = {
     onNodeSelect: PropTypes.func,
     onNodeDeselect: PropTypes.func,
     search: PropTypes.bool,
-    error: PropTypes.string
+    error: PropTypes.string,
+    size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
 };
 
 export default TreeView;

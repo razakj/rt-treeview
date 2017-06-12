@@ -49,6 +49,7 @@
     "postcss-cssnext": "^2.11.0",
     "postcss-loader": "^2.0.5",
     "postcss-nested": "^2.0.2",
+    "postcss-nesting": "^4.0.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.1",
     "react-toolbox": "^2.0.0-beta.8",

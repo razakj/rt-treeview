@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/npm.svg?style=flat-square)](https://www.npmjs.com/package/rt-treeview)
 [![GitHub tag](https://img.shields.io/github/tag/razakj/rt-treeview.svg?style=flat-square)]()
 
-TreeView component based on a great [react-toolbox](https://github.com/react-toolbox/react-toolbox) 
+React TreeView component based on a great [react-toolbox](https://github.com/react-toolbox/react-toolbox)
 UI framework.
 
 ## Demo
@@ -18,8 +18,7 @@ from the project.
 ### ToDo
 
 * Configurable search behaviour
-* Custom styling/theming including proper CSS nesting
-* Configurable sizing
+* Custom styling
 * Improved animation
 
 ## Overview
@@ -39,13 +38,13 @@ Main focus is on
 is deselected.
 * TreeView is defined by nodes which must be given as input in form of Map which may not be supported by older
 browsers. See status [here](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Map).
-I'd suggest using babel-polyfill or core-js in order to support older browsers.
+You can use babel-polyfill or core-js with your application in order to support older browsers.
 * The package will only work with **react-toolbox-beta8 and higher**
 
 #### Search
 
-Searching functionality can be enabled via a `search` property. Searching is optional due to its impact
-on the performance when performing the actual search.
+Searching functionality can be enabled via a `search` property. Searching is disabled by default due to its impact
+on the performance as the whole tree must be searched and modified.
 
 At the moment all the siblings (collapsed) along with matched node's parent structure (expanded) are displayed. 
 This is behaviour is expected to become configurable in the future.
@@ -55,19 +54,37 @@ This is behaviour is expected to become configurable in the future.
 Initial selection can be defined by providing a key value of initially selected node via `selectedNode` property.
 The parent structure of the initially selected node will be expanded.
 
+#### Sizing
+
+The TreeView supports four different sizing options provided via `size` option which accepts following values
+
+* xs
+* sm
+* md
+* lg
 
 ## Installation
-No surprise here
+
+This package can be embedded into your application requiring following peerDependencies
+
+* React
+* ReactDOM
+* react-toolbox
+
+You can get the component from NPM
+
 ```
 npm install rt-treeview
 ```
 
+UMD coming soon.
+
 ## Usage
-There are two components exposed by the package - TreeView and TreeViewDialog.
+There are two components exposed by the package - **TreeView** and **TreeViewDialog**.
 
 Similar to react-toolbox the components are written using React, PostCSS(http://postcss.org/) and CSSNext(http://cssnext.io/).
 That means in order to use the components you should use package bundler ([webpack](https://webpack.js.org/)) for your application
-along with PostCSS and CSSNext loaders.
+along with PostCSS - `postcss-cssnext` and `postcss-nesting` in particular.
 
 ### TreeView
 ```javascript
@@ -84,6 +101,7 @@ TreeView component can be embedded directly into your application. The tree is d
 | error         | string        | no          | Error message displayed above the tree
 | onNodeSelect  | func          | no          | Callback called on a node selection with *(nodeKey, node)*
 | onNodeDeselect| func          | no          | Callback called when a node is de-selected with *(nodeKey, node)*
+| size          | string        | no          | xs, sm, md, lg. Defaults to sm.
 #### Node.PropTypes
 | name          | type          | isRequired  | description |
 |---------------|:-------------:|:-----------:|:------------|
