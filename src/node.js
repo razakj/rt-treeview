@@ -8,7 +8,6 @@ import rippleTheme from 'react-toolbox/lib/ripple/theme.css';
 import treeviewTheme from './treeview.css';
 
 const Header = props => {
-    console.log(props);
     return (
         <div
             onMouseDown={props.onMouseDown}
@@ -30,7 +29,7 @@ const Header = props => {
     )
 };
 
-const RippleHeader = Ripple({spread: 2})(Header);
+const RippleHeader = Ripple({spread: 1})(Header);
 
 class Node extends React.Component {
     constructor(props) {
@@ -60,11 +59,18 @@ class Node extends React.Component {
     onClick(e) {
         e.stopPropagation();
         const {expanded, selected} = this.state;
+        let newSelectedState = false;
 
-        if(!selected) this.props.onNodeSelect(this.props.code, this.props.node);
+        if(!this.props.onlyLeafsSelectable
+            || (this.props.onlyLeafsSelectable && this.props.isLeaf)) {
+
+            if(!selected) this.props.onNodeSelect(this.props.code, this.props.node);
+            newSelectedState = true;
+
+        }
 
         this.setState({
-            selected: true,
+            selected: newSelectedState,
             expanded: !expanded
         });
 
@@ -83,6 +89,7 @@ class Node extends React.Component {
                         hasChildren={node.children && node.children.length > 0}
                         theme={rippleTheme}
                         style={{overflow: 'hidden'}}
+                        size={this.props.size}
                     />
                 </div>
                 <div style={{overflow: 'hidden'}} className={classNames(treeviewTheme.children, {
@@ -101,6 +108,7 @@ Node.PropTypes = {
     expanded : PropTypes.bool,
     hasChildren: PropTypes.bool,
     size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
+    onlyLeafsSelectable: PropTypes.bool,
     node: PropTypes.shape({
         name: PropTypes.string.isRequired,
         parent: PropTypes.string,

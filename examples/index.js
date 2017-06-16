@@ -17,14 +17,15 @@ class TreeViewExample extends React.Component {
 
         this.nodes = new Map(nodeArray);
         this.onNodeSelect = this.onNodeSelect.bind(this);
+        this.onNodeDeselect = this.onNodeDeselect.bind(this);
     }
 
     onNodeSelect(nodeKey, node) {
-        // Do stuff
+        console.log("This is " + nodeKey + ". Look at me, i'm selected!");
     }
 
     onNodeDeselect(nodeKey, node) {
-        // Do stuff
+        console.log("This is " + nodeKey + ". Why did you de-select me?");
     }
 
     render() {
@@ -33,6 +34,8 @@ class TreeViewExample extends React.Component {
                 nodes={this.nodes} // Map of nodes
                 search={true} // Search enabled/disabled
                 onNodeSelect={this.onNodeSelect} // Event called on node selection
+                onNodeDeselect={this.onNodeDeselect}
+                size="sm"
             />
         )
     }

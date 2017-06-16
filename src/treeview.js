@@ -135,6 +135,9 @@ class TreeView extends React.Component {
                             selected={selected}
                             expanded={this.state.expandedNodes.indexOf(key) > -1}
                             onNodeSelect={this.onNodeSelect}
+                            isLeaf={!node.children || node.children.length === 0}
+                            size={this.props.size}
+                            onlyLeafsSelectable={this.props.onlyLeafsSelectable}
                         >
                             {node.children && node.children.length > 0 ? this.recursiveRender(node.children) : null}
                         </Node>
@@ -198,6 +201,7 @@ TreeView.PropTypes = {
     search: PropTypes.bool,
     error: PropTypes.string,
     size: PropTypes.oneOf(["xs", "sm", "md", "lg"]),
+    onlyLeafsSelectable: PropTypes.bool
 };
 
 export default TreeView;

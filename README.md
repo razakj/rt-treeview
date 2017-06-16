@@ -102,6 +102,7 @@ TreeView component can be embedded directly into your application. The tree is d
 | onNodeSelect  | func          | no          | Callback called on a node selection with *(nodeKey, node)*
 | onNodeDeselect| func          | no          | Callback called when a node is de-selected with *(nodeKey, node)*
 | size          | string        | no          | xs, sm, md, lg. Defaults to sm.
+| onlyLeafsSelectable | bool    | no          | Makes only leaf nodes selectable and doesn't trigger onNodeSelect for non-leaf nodes. Defaults to false.
 #### Node.PropTypes
 | name          | type          | isRequired  | description |
 |---------------|:-------------:|:-----------:|:------------|
