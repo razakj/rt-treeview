@@ -4185,6 +4185,7 @@
 }.treeview__treeView___jSc4 > ul li > .treeview__node___34XE > .treeview__header___vm1a.treeview__lg___13tu:not(.treeview__selected___5Rke) {
                     padding-left: 22px;
 }.treeview__treeView___jSc4 > ul li .treeview__children___3MOe > ul {
+                    list-style-type: none;
                     padding-left: 10px;
 }.treeview__treeView___jSc4.treeview__errorText___E05j {
         color: rgb(222, 50, 38);
@@ -4201,8 +4202,13 @@
                     background: rgb(238, 238, 238);
 }.search__input___-vqM {
     padding-bottom: 0;
-}.dialog__body___1KdS {
+}.dialog__dialog___3ZX1 {
+    height: 100%;
+}
+
+.dialog__body___1KdS {
     overflow-y: scroll;
+    color: #000;
 }
 
 .dialog__input___18oH {
