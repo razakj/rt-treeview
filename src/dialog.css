@@ -1,5 +1,10 @@
+.dialog {
+    height: 100%;
+}
+
 .body {
     overflow-y: scroll;
+    color: #000;
 }
 
 .input {

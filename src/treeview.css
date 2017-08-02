@@ -17,6 +17,7 @@
         padding-left: 0;
 
         & li {
+
             & > .node {
 
                 &:hover {
@@ -82,6 +83,7 @@
 
             & .children {
                 & > ul {
+                    list-style-type: none;
                     padding-left: 10px;
                 }
             }
